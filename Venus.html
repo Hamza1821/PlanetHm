@@ -128,7 +128,7 @@
     <section>
         <div class="planet"></div></section>
         <div><h1>VENUS</h1><br>
-            <p>Venus is the second planet from the Sun and is Earth’s closest planetary neighbor. It’s one of the four inner, terrestrial (or rocky) planets, and it’s often called Earth’s twin because it’s similar in size and density. These are not identical twins, however – there are radical differences between the two worlds.Venus is also the hottest planet of solar system 
+            <p id="textContent">
             </p>
             <button type="button" class="btn" id="btn" onclick="speech()"><img style="width: 30%;" class="speechbutton" src="https://cdn-icons-png.flaticon.com/512/26/26706.png" alt=""></button></div>
             <footer> 
@@ -147,11 +147,26 @@
                 
             </footer>
             <script>
-         
+                 let textTag=document.getElementById("textContent");
+                let textCtnt =`Venus is the second planet from the Sun and is Earth’s closest planetary neighbor. It’s one of the four inner, terrestrial (or rocky) planets and it’s often called Earth’s twin because it’s similar in size and density. These are not identical twins  however – there are radical differences between the two worlds . Venus is also the hottest planet of solar system `;
+                let idx =1;
+                let speed = 50;
+                writeText()
+                speech()
+
+          function writeText() {
+             textTag.innerText = textCtnt.slice(0, idx)
+
+               idx++
+
+               
+            setTimeout(writeText, speed)
+   
+          }
        
                 function speech(e){
                     let button = document.querySelector("#btn")
-                const text_box =button.previousElementSibling.textContent;
+                const text_box =textCtnt
                     const text= new SpeechSynthesisUtterance(text_box);
                     speechSynthesis.speak(text);
                     

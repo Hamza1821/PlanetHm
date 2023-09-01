@@ -131,7 +131,7 @@
         <div class="planet"></div></section>
         <div class="ring"></div>
         <div class="text"><h1>URANUS</h1><br>
-            <p>Uranus—seventh planet from the Sun—rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side. </p>
+            <p id="textContent"> </p>
             <button type="button" class="btn" id="btn" onclick="speech()"><img style="width: 30%;" class="speechbutton" src="https://cdn-icons-png.flaticon.com/512/26/26706.png" alt=""></button></div>
             <footer> 
                 <a href="space.html"><button type="button">HOME</button></a>
@@ -149,11 +149,26 @@
                 
             </footer>
             <script>
-         
+                    let textTag=document.getElementById("textContent");
+                let textCtnt =`Uranus—seventh planet from the Sun—rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side.`;
+                let idx =1;
+                let speed = 50;
+                writeText()
+                speech()
+
+          function writeText() {
+             textTag.innerText = textCtnt.slice(0, idx)
+
+               idx++
+
+               
+            setTimeout(writeText, speed)
+   
+          }
        
                 function speech(e){
                     let button = document.querySelector("#btn")
-                const text_box =button.previousElementSibling.textContent;
+                const text_box =textCtnt
                     const text= new SpeechSynthesisUtterance(text_box);
                     speechSynthesis.speak(text);
                     

@@ -129,8 +129,7 @@
 <body>
     <section>
         <div class="planet"></div></section> <div><h1>MOON</h1><br>
-            <p>Earth's Moon is the only place beyond Earth where humans have set foot...
-                <br>...The brightest and largest object in our night sky, the Moon makes Earth a more livable planet by moderating our home planet's wobble on its axis, leading to a relatively stable climate. It also causes tides, creating a rhythm that has guided humans for thousands of years. The Moon was likely formed after a Mars-sized body collided with Earth.
+            <p id="textContent">
             </p>
             <button type="button" class="btn" id="btn" onclick="speech()"><img style="width: 30%;" class="speechbutton" src="https://cdn-icons-png.flaticon.com/512/26/26706.png" alt=""></button></div>
             <footer> 
@@ -149,11 +148,27 @@
                 
             </footer>
             <script>
-         
+                    let textTag=document.getElementById("textContent");
+                let textCtnt =`Earth's Moon is the only place beyond Earth where humans have set foot...
+                ...The brightest and largest object in our night sky, the Moon makes Earth a more livable planet by moderating our home planet's wobble on its axis, leading to a relatively stable climate. It also causes tides, creating a rhythm that has guided humans for thousands of years. The Moon was likely formed after a Mars-sized body collided with Earth.`;
+                let idx =1;
+                let speed = 45;
+                writeText()
+                speech()
+
+          function writeText() {
+             textTag.innerText = textCtnt.slice(0, idx)
+
+               idx++
+
+               
+            setTimeout(writeText, speed)
+   
+          }
        
                 function speech(e){
                     let button = document.querySelector("#btn")
-                const text_box =button.previousElementSibling.textContent;
+                const text_box =textCtnt
                     const text= new SpeechSynthesisUtterance(text_box);
                     speechSynthesis.speak(text);
                     

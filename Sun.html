@@ -128,7 +128,7 @@
     <section>
         <div class="planet"></div></section>
         <div><h1>SUN</h1><br>
-            <p>Our Sun is a 4.5 billion-year-old star – a hot glowing ball of hydrogen and helium at the center of our solar system. The Sun is about 93 million miles (150 million kilometers) from Earth, and without its energy, life as we know it could not exist here on our home planet.
+            <p id="textContent">
                </p>
                <button type="button" class="btn" id="btn" onclick="speech()"><img style="width: 30%;" class="speechbutton" src="https://cdn-icons-png.flaticon.com/512/26/26706.png" alt=""></button>
             </div>
@@ -148,11 +148,26 @@
                     
                 </footer>
                 <script>
-         
+                      let textTag=document.getElementById("textContent");
+                let textCtnt =`Our Sun is a 4.5 billion-year-old star – a hot glowing ball of hydrogen and helium at the center of our solar system. The Sun is about 93 million miles (150 million kilometers) from Earth, and without its energy, life as we know it could not exist here on our home planet.`;
+                let idx =1;
+                let speed = 50;
+                writeText()
+                speech()
+
+          function writeText() {
+             textTag.innerText = textCtnt.slice(0, idx)
+
+               idx++
+
+               
+            setTimeout(writeText, speed)
+   
+          }
        
                     function speech(e){
                         let button = document.querySelector("#btn")
-                    const text_box =button.previousElementSibling.textContent;
+                    const text_box =`Our Sun is a 4.5 billion-year-old star – a hot glowing ball of hydrogen and helium at the center of our solar system. The Sun is about 93 million miles (150 million kilometers) from Earth, and without its energy, life as we know it could not exist here on our home planet.`;
                         const text= new SpeechSynthesisUtterance(text_box);
                         speechSynthesis.speak(text);
                         
