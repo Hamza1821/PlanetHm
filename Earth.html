@@ -120,6 +120,29 @@
 
             
         }
+        @media screen and  (orientation: portrait){
+            .aboutPlanet{ 
+                display:flex;
+            
+            flex-direction: column;
+            height: 50%;
+            width: 90%;
+            position: absolute;
+            top: 1%;
+            left: 5%;
+            animation: opmy 2s linear none;
+
+            }
+            h1{
+                font-size: x-large;
+            }
+            p{
+                font-size: 15px;
+            }
+            .btn{
+                width: 10%;
+            }
+        }
 
     </style>
     <title>Earth</title>
@@ -127,7 +150,7 @@
 <body>
     <section>
         <div class="planet"></div></section>
-        <div><h1>EARTH</h1><br>
+        <div class="aboutPlanet"><h1>EARTH</h1><br>
         <p id="textContent">
 
             </p>
