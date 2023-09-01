@@ -136,11 +136,8 @@
         <div class="planet"></div>
         <div class="ring"></div></section>
         <div class="text"><h1>SATURN</h1><br>
-            <p>
-                Saturn is the sixth planet from the Sun and the second-largest planet in our solar system....
-                ....Adorned with thousands of beautiful ringlets, Saturn is unique among the planets. It is not the only planet to have rings – made of chunks of ice and rock – but none are as spectacular or as complicated as Saturn's.
-
-                Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium.
+            <p id="textContent">starting
+                
             </p> 
             <button type="button" class="btn" id="btn" onclick="speech()"><img style="width: 30%;" class="speechbutton" src="https://cdn-icons-png.flaticon.com/512/26/26706.png" alt=""></button>
         </div>
@@ -160,11 +157,29 @@
                 
             </footer>
             <script>
-         
+                let textTag=document.getElementById("textContent");
+                let textCtnt =`Saturn is the sixth planet from the Sun and the second-largest planet in our solar system....
+                ....Adorned with thousands of beautiful ringlets, Saturn is unique among the planets. It is not the only planet to have rings – made of chunks of ice and rock – but none are as spectacular or as complicated as Saturn's.
+                Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium.`;
+                let idx =1;
+                let speed = 45;
+                writeText()
+
+          function writeText() {
+             textTag.innerText = textCtnt.slice(0, idx)
+
+               idx++
+
+               
+            setTimeout(writeText, speed)
+   
+          }
+
+               speech()
        
                 function speech(e){
                     let button = document.querySelector("#btn")
-                const text_box =button.previousElementSibling.textContent;
+                const text_box =textCtnt;
                     const text= new SpeechSynthesisUtterance(text_box);
                     speechSynthesis.speak(text);
                     
