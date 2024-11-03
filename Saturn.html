@@ -35,7 +35,7 @@
     transform: translate(-50%,-50%);
     width: 300px;
     height: 300px;
-    background:url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fdedbd0d-a698-4b53-af5d-26c4046fa564/dd1nipp-6e1f6a68-ad49-45bd-ba15-ba5f4cf681bc.png/v1/fill/w_1024,h_512,q_80,strp/cassini_saturn_map_by_astra_planetshine_dd1nipp-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvZmRlZGJkMGQtYTY5OC00YjUzLWFmNWQtMjZjNDA0NmZhNTY0XC9kZDFuaXBwLTZlMWY2YTY4LWFkNDktNDViZC1iYTE1LWJhNWY0Y2Y2ODFiYy5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.UetL7dKwwN35RyaQ0kZK9GACl5aemOSIve8b7Ly_o2E");
+    background:url("./assets/saturn.jpg");
     border-radius: 50%;
     background-size:cover;
     background-repeat: repeat-x;
@@ -162,10 +162,10 @@
             <p id="textContent">starting
                 
             </p> 
-            <button type="button" class="btn" id="btn" onclick="speech()"><img style="width: 30%;" class="speechbutton"  src="https://cdn-icons-png.flaticon.com/512/26/26706.png" alt=""></button>
+            
         </div>
             <footer> 
-                <a href="space.html"><button type="button">HOME</button></a>
+                <a href="index.html"><button type="button">HOME</button></a>
                 <a href="Sun.html"><button type="button">SUN</button></a>
                 <a href="Mercury.html"><button >MERCURY </button></a>
                 <a href="Venus.html"><button>VENUS </button></a>
@@ -198,17 +198,7 @@
    
           }
 
-               speech()
-       
-                function speech(e){
-                    let button = document.querySelector("#btn")
-                const text_box =textCtnt;
-                    const text= new SpeechSynthesisUtterance(text_box);
-                    speechSynthesis.speak(text);
-
-                     
-                   
-                }
+               
             </script>
 </body>
 </html>

@@ -35,7 +35,7 @@
     transform: translate(-50%,-50%);
     width: 300px;
     height: 300px;
-    background:url("uranus1.jpeg");
+    background:url("./assets/uranus1.jpeg");
     border-radius: 50%;
     background-size:cover;
     
@@ -155,9 +155,9 @@
         
         <div class="aboutPlanet"><h1>URANUS</h1><br>
             <p id="textContent"> </p>
-            <button type="button" class="btn" id="btn" onclick="speech()"><img style="width: 30%;" class="speechbutton" src="https://cdn-icons-png.flaticon.com/512/26/26706.png" alt=""></button></div>
+            </div>
             <footer> 
-                <a href="space.html"><button type="button">HOME</button></a>
+                <a href="index.html"><button type="button">HOME</button></a>
                 <a href="Sun.html"><button type="button">SUN</button></a>
                 <a href="Mercury.html"><button >MERCURY </button></a>
                 <a href="Venus.html"><button>VENUS </button></a>
@@ -177,7 +177,7 @@
                 let idx =1;
                 let speed = 50;
                 writeText()
-                speech()
+                
 
           function writeText() {
              textTag.innerText = textCtnt.slice(0, idx)
@@ -189,13 +189,7 @@
    
           }
        
-                function speech(e){
-                    let button = document.querySelector("#btn")
-                const text_box =textCtnt
-                    const text= new SpeechSynthesisUtterance(text_box);
-                    speechSynthesis.speak(text);
-                    
-                }
+               
             </script>
 </body>
 </html>
